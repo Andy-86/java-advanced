@@ -1,0 +1,305 @@
+Classfile /F:/Mr.Zhong/MyWork/git/my/java-advanced/lesson-one/src/main/java/org/lesson/one/Hello.class
+  Last modified 2020年10月16日; size 2120 bytes
+  SHA-256 checksum 4844aa9b77ca116c041d678967201043f4b69af80a7fd31c517e35a983a169c4
+  Compiled from "Hello.java"
+public class org.lesson.one.Hello
+  minor version: 0
+  major version: 57
+  flags: (0x0021) ACC_PUBLIC, ACC_SUPER
+  this_class: #47                         // org/lesson/one/Hello
+  super_class: #2                         // java/lang/Object
+  interfaces: 0, fields: 4, methods: 12, attributes: 3
+Constant pool:
+   #1 = Methodref          #2.#3          // java/lang/Object."<init>":()V
+   #2 = Class              #4             // java/lang/Object
+   #3 = NameAndType        #5:#6          // "<init>":()V
+   #4 = Utf8               java/lang/Object
+   #5 = Utf8               <init>
+   #6 = Utf8               ()V
+   #7 = Fieldref           #8.#9          // java/lang/System.out:Ljava/io/PrintStream;
+   #8 = Class              #10            // java/lang/System
+   #9 = NameAndType        #11:#12        // out:Ljava/io/PrintStream;
+  #10 = Utf8               java/lang/System
+  #11 = Utf8               out
+  #12 = Utf8               Ljava/io/PrintStream;
+  #13 = String             #14            // say something
+  #14 = Utf8               say something
+  #15 = Methodref          #16.#17        // java/io/PrintStream.println:(Ljava/lang/String;)V
+  #16 = Class              #18            // java/io/PrintStream
+  #17 = NameAndType        #19:#20        // println:(Ljava/lang/String;)V
+  #18 = Utf8               java/io/PrintStream
+  #19 = Utf8               println
+  #20 = Utf8               (Ljava/lang/String;)V
+  #21 = InvokeDynamic      #0:#22         // #0:makeConcatWithConstants:(I)Ljava/lang/String;
+  #22 = NameAndType        #23:#24        // makeConcatWithConstants:(I)Ljava/lang/String;
+  #23 = Utf8               makeConcatWithConstants
+  #24 = Utf8               (I)Ljava/lang/String;
+  #25 = InvokeDynamic      #1:#22         // #1:makeConcatWithConstants:(I)Ljava/lang/String;
+  #26 = Long               100l
+  #28 = Methodref          #29.#30        // java/lang/Thread.sleep:(J)V
+  #29 = Class              #31            // java/lang/Thread
+  #30 = NameAndType        #32:#33        // sleep:(J)V
+  #31 = Utf8               java/lang/Thread
+  #32 = Utf8               sleep
+  #33 = Utf8               (J)V
+  #34 = String             #35            // finally
+  #35 = Utf8               finally
+  #36 = Class              #37            // java/lang/InterruptedException
+  #37 = Utf8               java/lang/InterruptedException
+  #38 = Methodref          #36.#39        // java/lang/InterruptedException.printStackTrace:()V
+  #39 = NameAndType        #40:#6         // printStackTrace:()V
+  #40 = Utf8               printStackTrace
+  #41 = Class              #42            // java/lang/IllegalStateException
+  #42 = Utf8               java/lang/IllegalStateException
+  #43 = String             #44            // a illegalState exception
+  #44 = Utf8               a illegalState exception
+  #45 = Methodref          #41.#46        // java/lang/IllegalStateException."<init>":(Ljava/lang/String;)V
+  #46 = NameAndType        #5:#20         // "<init>":(Ljava/lang/String;)V
+  #47 = Class              #48            // org/lesson/one/Hello
+  #48 = Utf8               org/lesson/one/Hello
+  #49 = Utf8               a
+  #50 = Utf8               I
+  #51 = Utf8               b
+  #52 = Utf8               c
+  #53 = Utf8               ConstantValue
+  #54 = Integer            3
+  #55 = Utf8               d
+  #56 = Integer            4
+  #57 = Utf8               Code
+  #58 = Utf8               LineNumberTable
+  #59 = Utf8               main
+  #60 = Utf8               ([Ljava/lang/String;)V
+  #61 = Utf8               say
+  #62 = Utf8               (Ljava/lang/String;)Ljava/lang/String;
+  #63 = Utf8               add
+  #64 = Utf8               (II)I
+  #65 = Utf8               sub
+  #66 = Utf8               mul
+  #67 = Utf8               div
+  #68 = Utf8               re
+  #69 = Utf8               testForLoop
+  #70 = Utf8               StackMapTable
+  #71 = Utf8               testForeachLoop
+  #72 = Class              #73            // "[I"
+  #73 = Utf8               [I
+  #74 = Utf8               testTryCatchException
+  #75 = Class              #76            // java/lang/Throwable
+  #76 = Utf8               java/lang/Throwable
+  #77 = Utf8               testThrowRuntimeException
+  #78 = Utf8               SourceFile
+  #79 = Utf8               Hello.java
+  #80 = Utf8               BootstrapMethods
+  #81 = MethodHandle       6:#82          // REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #82 = Methodref          #83.#84        // java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #83 = Class              #85            // java/lang/invoke/StringConcatFactory
+  #84 = NameAndType        #23:#86        // makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #85 = Utf8               java/lang/invoke/StringConcatFactory
+  #86 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #87 = String             #88            // for loop i = \u0001
+  #88 = Utf8               for loop i = \u0001
+  #89 = String             #90            // foreach loop i = \u0001
+  #90 = Utf8               foreach loop i = \u0001
+  #91 = Utf8               InnerClasses
+  #92 = Class              #93            // java/lang/invoke/MethodHandles$Lookup
+  #93 = Utf8               java/lang/invoke/MethodHandles$Lookup
+  #94 = Class              #95            // java/lang/invoke/MethodHandles
+  #95 = Utf8               java/lang/invoke/MethodHandles
+  #96 = Utf8               Lookup
+{
+  public static int b;
+    descriptor: I
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+
+  public static final int c;
+    descriptor: I
+    flags: (0x0019) ACC_PUBLIC, ACC_STATIC, ACC_FINAL
+    ConstantValue: int 3
+
+  public org.lesson.one.Hello();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 3: 0
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=0, locals=1, args_size=1
+         0: return
+      LineNumberTable:
+        line 12: 0
+
+  public java.lang.String say(java.lang.String);
+    descriptor: (Ljava/lang/String;)Ljava/lang/String;
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+         3: ldc           #13                 // String say something
+         5: invokevirtual #15                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+         8: aload_1
+         9: areturn
+      LineNumberTable:
+        line 15: 0
+        line 16: 8
+
+  public static int add(int, int);
+    descriptor: (II)I
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: iload_0
+         1: iload_1
+         2: iadd
+         3: ireturn
+      LineNumberTable:
+        line 20: 0
+
+  public static int sub(int, int);
+    descriptor: (II)I
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: iload_0
+         1: iload_1
+         2: isub
+         3: ireturn
+      LineNumberTable:
+        line 24: 0
+
+  public static int mul(int, int);
+    descriptor: (II)I
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: iload_0
+         1: iload_1
+         2: imul
+         3: ireturn
+      LineNumberTable:
+        line 28: 0
+
+  public static int div(int, int);
+    descriptor: (II)I
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: iload_0
+         1: iload_1
+         2: idiv
+         3: ireturn
+      LineNumberTable:
+        line 32: 0
+
+  public static int re(int, int);
+    descriptor: (II)I
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: iload_0
+         1: iload_1
+         2: irem
+         3: ireturn
+      LineNumberTable:
+        line 36: 0
+
+  public void testForLoop();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=1
+         0: iconst_0
+         1: istore_1
+         2: iload_1
+         3: bipush        10
+         5: if_icmpge     26
+         8: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        11: iload_1
+        12: invokedynamic #21,  0             // InvokeDynamic #0:makeConcatWithConstants:(I)Ljava/lang/String;
+        17: invokevirtual #15                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        20: iinc          1, 1
+        23: goto          2
+        26: return
+      LineNumberTable:
+        line 40: 0
+        line 41: 8
+        line 40: 20
+        line 43: 26
+      StackMapTable: number_of_entries = 2
+        frame_type = 252 /* append */
+          offset_delta = 2
+          locals = [ int ]
+        frame_type = 250 /* chop */
+          offset_delta = 23
+
+  public void testForeachLoop();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=4, locals=6, args_size=1
+         0: iconst_3
+         1: newarray       int
+         3: dup
+         4: iconst_0
+         5: iconst_1
+         6: iastore
+         7: dup
+         8: iconst_1
+         9: iconst_2
+        10: iastore
+        11: dup
+        12: iconst_2
+        13: iconst_3
+        14: iastore
+        15: astore_1
+        16: aload_1
+        17: astore_2
+        18: aload_2
+        19: arraylength
+        20: istore_3
+        21: iconst_0
+        22: istore        4
+        24: iload         4
+        26: iload_3
+        27: if_icmpge     55
+        30: aload_2
+        31: iload         4
+        33: iaload
+        34: istore        5
+        36: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        39: iload         5
+        41: invokedynamic #25,  0             // InvokeDynamic #1:makeConcatWithConstants:(I)Ljava/lang/String;
+        46: invokevirtual #15                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        49: iinc          4, 1
+        52: goto          24
+        55: return
+      LineNumberTable:
+        line 46: 0
+        line 47: 16
+        line 48: 36
+        line 47: 49
+        line 50: 55
+      StackMapTable: number_of_entries = 2
+        frame_type = 255 /* full_frame */
+          offset_delta = 24
+          locals = [ class org/lesson/one/Hello, class "[I", class "[I", int, int ]
+          stack = []
+        frame_type = 248 /* chop */
+          offset_delta = 30
+}
+SourceFile: "Hello.java"
+BootstrapMethods:
+  0: #81 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #87 for loop i = \u0001
+  1: #81 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #89 foreach loop i = \u0001
+InnerClasses:
+  public static final #96= #92 of #94;    // Lookup=class java/lang/invoke/MethodHandles$Lookup of class java/lang/invoke/MethodHandles
