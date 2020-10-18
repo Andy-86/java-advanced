@@ -133,23 +133,23 @@ Constant pool:
     #1 = Methodref          #2.#3         // java/lang/Object."<init>":()V  //解析说明：符号引用指向 java/lang/Object."<init>":()V
     #2 = Class              #4            // java/lang/Object //解析说明：符号引用指向全限定名 java/lang/Object常量项的索引
     #3 = NameAndType        #5:#6         // "<init>":()V //解析说明：符号引用指向<init>方法名称、描述符的索引
-    #4 = Utf8               java/lang/Object //解析说明：Utf8编码字符串
-    #5 = Utf8               <init>
-    #6 = Utf8               ()V
-    #7 = Class              #8            // Hello
-    #8 = Utf8               Hello
-    #9 = Methodref          #7.#3         // Hello."<init>":()V
-   #10 = String             #11           // hello world
-   #11 = Utf8               hello world
-   #12 = Methodref          #7.#13        // Hello.say:(Ljava/lang/String;)V
-   #13 = NameAndType        #14:#15       // say:(Ljava/lang/String;)V
-   #14 = Utf8               say
-   #15 = Utf8               (Ljava/lang/String;)V
+    #4 = Utf8               java/lang/Object //解析说明：Utf8编码字符串java/lang/Object
+    #5 = Utf8               <init>        //解析说明：Utf8编码字符串<init>
+    #6 = Utf8               ()V           //解析说明：Utf8编码字符串()V
+    #7 = Class              #8            // Hello //解析说明：类符号引用指向Hello类名称索引
+    #8 = Utf8               Hello         //解析说明：Utf8编码字符串Hello
+    #9 = Methodref          #7.#3         // Hello."<init>":()V  //解析说明：方法符号引用指向Hello."<init>":()V
+   #10 = String             #11           // hello world //解析说明：字符串类型字面量索引指向hello world
+   #11 = Utf8               hello world   //解析说明：Utf8编码字符串hello world
+   #12 = Methodref          #7.#13        // Hello.say:(Ljava/lang/String;)V //解析说明：方法符号引用指向Hello.say:(Ljava/lang/String;)V
+   #13 = NameAndType        #14:#15       // say:(Ljava/lang/String;)V //解析说明：方法符号引用
+   #14 = Utf8               say           //解析说明：Utf8编码字符串say
+   #15 = Utf8               (Ljava/lang/String;)V  //解析说明：Utf8编码字符串(Ljava/lang/String;)V
    #16 = Methodref          #7.#17        // Hello.add:(II)I
    #17 = NameAndType        #18:#19       // add:(II)I
    #18 = Utf8               add
    #19 = Utf8               (II)I
-   #20 = Integer            1000000
+   #20 = Integer            1000000       //解析说明：整形字面量
    #21 = Methodref          #7.#22        // Hello.sub:(II)I
    #22 = NameAndType        #23:#19       // sub:(II)I
    #23 = Utf8               sub
@@ -217,7 +217,7 @@ Constant pool:
    #85 = NameAndType        #87:#15       // println:(Ljava/lang/String;)V
    #86 = Utf8               java/io/PrintStream
    #87 = Utf8               println
-   #88 = InvokeDynamic      #0:#89        // #0:makeConcatWithConstants:(I)Ljava/lang/String;
+   #88 = InvokeDynamic      #0:#89        // #0:makeConcatWithConstants:(I)Ljava/lang/String; //解析说明：动态方法调用点
    #89 = NameAndType        #90:#91       // makeConcatWithConstants:(I)Ljava/lang/String;
    #90 = Utf8               makeConcatWithConstants
    #91 = Utf8               (I)Ljava/lang/String;
@@ -267,7 +267,7 @@ Constant pool:
   #136 = Utf8               Hello.java
   #137 = Utf8               NestMembers
   #138 = Utf8               BootstrapMethods
-  #139 = MethodHandle       6:#140        // REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #139 = MethodHandle       6:#140        // REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite; //解释说明:表示方法句柄
   #140 = Methodref          #141.#142     // java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
   #141 = Class              #143          // java/lang/invoke/StringConcatFactory
   #142 = NameAndType        #90:#144      // makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
@@ -285,48 +285,119 @@ Constant pool:
   #154 = Class              #155          // java/lang/invoke/MethodHandles
   #155 = Utf8               java/lang/invoke/MethodHandles
   #156 = Utf8               Lookup
+
+//解释说明：字段表
+        类型	名称	含义
+        u2	access_flags	访问标志
+        u2	name_index	字段名索引
+        u2	descriptor_index	描述符索引
+        u2	attributes_count	属性计数器
+        attribute_info	attributes	属性集合
+
+        注意事项
+        1、字段表集合中不会列出从父类或者父接口中继承而来的字段。
+        2、内部类中为了保持对外部类的访问性，会自动添加指向外部类实例的字段。
+        3、在Java语言中字段是无法重载的，两个字段的数据类型，修饰符不管是否相同，都必须使用不一样的名称，但是对于字节码来讲，如果两个字段的描述符不一致，那字段重名就是合法的．
+
 {
   public static int b;
-    descriptor: I
-    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    descriptor: I //解释说明：类型为int
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC //解释说明：访问标志public、static
 
   public static final int c;
-    descriptor: I
-    flags: (0x0019) ACC_PUBLIC, ACC_STATIC, ACC_FINAL
-    ConstantValue: int 3
+    descriptor: I //解释说明：类型为int
+    flags: (0x0019) ACC_PUBLIC, ACC_STATIC, ACC_FINAL //解释说明：访问标志public、static、final
+    ConstantValue: int 3 // 字面常量为3
+
+//解释说明：方法表
+        类型	名称	含义
+        u2	access_flags	访问标志
+        u2	name_index	方法名索引
+        u2	descriptor_index	描述符索引
+        u2	attributes_count	属性计数器
+        attribute_info	attributes	属性集合
+
+        属性表：
+        类型	名称	数量	含义
+        u2	attribute_name_index	1	属性名索引
+        u2	attribute_length	1	属性长度
+        u1	info	attribute_length	属性表
+
+        属性类型：
+        属性名称	使用位置	含义
+        Code	方法表	Java代码编译成的字节码指令
+        ConstantValue	字段表	final关键字定义的常量池
+        Deprecated	类，方法，字段表	被声明为deprecated的方法和字段
+        Exceptions	方法表	方法抛出的异常
+        EnclosingMethod	类文件	仅当一个类为局部类或者匿名类是才能拥有这个属性，这个属性用于标识这个类所在的外围方法
+        InnerClass	类文件	内部类列表
+        LineNumberTable	Code属性	Java源码的行号与字节码指令的对应关系
+        LocalVariableTable	Code属性	方法的局部变量描述
+        StackMapTable	Code属性	JDK1.6中新增的属性，供新的类型检查检验器检查和处理目标方法的局部变量和操作数有所需要的类是否匹配
+        Signature	类，方法表，字段表	用于支持泛型情况下的方法签名
+        SourceFile	类文件	记录源文件名称
+        SourceDebugExtension	类文件	用于存储额外的调试信息
+        Synthetic	类，方法表，字段表	标志方法或字段为编译器自动生成的
+        LocalVariableTypeTable	类	使用特征签名代替描述符，是为了引入泛型语法之后能描述泛型参数化类型而添加
+        RuntimeVisibleAnnotations	类，方法表，字段表	为动态注解提供支持
+        RuntimeInvisibleAnnotations	表，方法表，字段表	用于指明哪些注解是运行时不可见的
+        RuntimeVisibleParameterAnnotation	方法表	作用与RuntimeVisibleAnnotations属性类似，只不过作用对象为方法
+        RuntimeInvisibleParameterAnnotation	方法表	作用与RuntimeInvisibleAnnotations属性类似，作用对象哪个为方法参数
+        AnnotationDefault	方法表	用于记录注解类元素的默认值
+        BootstrapMethods	类文件	用于保存invokeddynamic指令引用的引导方式限定符
+
+        Code表结构：
+        类型	名称	含义
+        u2	attribute_name_index 属性名索引
+        u4	attribute_length	属性长度
+        u2	max_stack	操作数栈深度的最大值
+        u2	max_locals	局部变量表所需的存续空间
+        u4	code_length	字节码指令的长度
+        u1	code	code_length	存储字节码指令
+        u2	exception_table_length	异常表长度
+        exception_info	exception_table	exception_length	异常表
+        u2	attributes_count	属性集合计数器
+        attribute_info	attributes	attributes_count	属性集合
+
+        LineNumberTable表结构：
+        类型	名称	含义
+        u2	attribute_name_index	属性名索引
+        u4	attribute_length	属性长度
+        u2	line_number_table_length	行号表长度
+        line_number_info	line_number_table	line_number_table_length	行号表
 
   public Hello();
-    descriptor: ()V
-    flags: (0x0001) ACC_PUBLIC
-    Code:
-      stack=1, locals=1, args_size=1
-         0: aload_0
-         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
-         4: return
-      LineNumberTable:
-        line 1: 0
+    descriptor: ()V //解释说明：无参无返回值
+    flags: (0x0001) ACC_PUBLIC //解释说明：访问标记public
+    Code: //解释说明：code属性表
+      stack=1, locals=1, args_size=1 // 解释说明：栈深度1，局部变量表长度1，参数个数1
+         0: aload_0   //解释说明：将第0个Slot中为reference类型的本地变量推送到操作数栈顶，这里是将this推送到栈顶
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V //解释说明：将操作数栈顶的reference类型数据所指向的对象作为方法接收者，调用此对象的实例方法、private方法或者他的父类方法。这里是调用父类Object的<init>方法
+         4: return // 解释说明：回此方法，并且返回值为void。这条指令执行完后，当前的方法也就结束了
+      LineNumberTable: //解释说明：LineNumberTable表，Java源码的行号与字节码指令的对应关系
+        line 1: 0 //解释说明：字节码第0行对应源码第一行
 
   public static void main(java.lang.String[]);
-    descriptor: ([Ljava/lang/String;)V
-    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    descriptor: ([Ljava/lang/String;)V //解释说明：参数是String对象数组，没有返回值
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC //解释说明：访问标志public、static
     Code:
       stack=4, locals=4, args_size=1
-         0: new           #7                  // class Hello
-         3: dup
-         4: invokespecial #9                  // Method "<init>":()V
-         7: astore_1
-         8: aload_1
-         9: ldc           #10                 // String hello world
-        11: invokevirtual #12                 // Method say:(Ljava/lang/String;)V
-        14: iconst_1
-        15: iconst_2
-        16: invokestatic  #16                 // Method add:(II)I
-        19: pop
-        20: ldc           #20                 // int 1000000
-        22: bipush        20
-        24: invokestatic  #21                 // Method sub:(II)I
+         0: new           #7                  // class Hello //解释说明：创建一个对象，并将其引用值压入栈顶
+         3: dup                                // 解释说明：复制栈顶数值并将复制值压入栈顶
+         4: invokespecial #9                  // Method "<init>":()V //解释说明：
+         7: astore_1                          //解释说明：将栈顶引用型数值存入第二个本地变量
+         8: aload_1                           //解释说明：将第二个引用类型本地变量推送到栈顶
+         9: ldc           #10                 // String hello world //解释说明：将int, float或String型常量值从常量池中推送至栈顶
+        11: invokevirtual #12                 // Method say:(Ljava/lang/String;)V //解释说明：调用超类构造方法，实例初始化方法，私有方法
+        14: iconst_1  //解释说明：将int型1推送至栈顶
+        15: iconst_2  //解释说明：将int型2推送至栈顶
+        16: invokestatic  #16                 // Method add:(II)I //解释说明：调用静态方法
+        19: pop   //解释说明：将栈顶数值弹出 (数值不能是long或do le类型的)
+        20: ldc           #20                 // int 1000000 //解释说明：将int, float或String型常量值从常量池中推送至栈顶
+        22: bipush        20 //解释说明：将单字节的常量值(-128~127)推送至栈顶
+        24: invokestatic  #21                 // Method sub:(II)I //解释说明：调用静态方法
         27: pop
-        28: sipush        1000
+        28: sipush        1000    //解释说明：将一个短整型常量值(-32768~32767)推送至栈顶
         31: sipush        2000
         34: invokestatic  #24                 // Method mul:(II)I
         37: pop
@@ -359,7 +430,7 @@ Constant pool:
         88: astore_2
         89: aload_2
         90: ldc           #61                 // String moon
-        92: putfield      #63                 // Field Hello$InnerClassTest1.name:Ljava/lang/String;
+        92: putfield      #63                 // Field Hello$InnerClassTest1.name:Ljava/lang/String;  //解释说明：为指定的类的实例域赋值
         95: aload_2
         96: invokevirtual #67                 // Method Hello$InnerClassTest1.greet:()V
         99: new           #70                 // class Hello$InnerClassTest2
@@ -398,7 +469,7 @@ Constant pool:
     flags: (0x0001) ACC_PUBLIC
     Code:
       stack=2, locals=2, args_size=2
-         0: getstatic     #77                 // Field java/lang/System.out:Ljava/io/PrintStream;
+         0: getstatic     #77                 // Field java/lang/System.out:Ljava/io/PrintStream; //解释说明：获取指定类的静态域，并将其值压入栈顶
          3: aload_1
          4: invokevirtual #83                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
          7: return
@@ -425,8 +496,8 @@ Constant pool:
       stack=2, locals=2, args_size=2
          0: iload_0
          1: iload_1
-         2: isub
-         3: ireturn
+         2: isub  //解释说明：将栈顶两int型数值相减并将结果压入栈顶
+         3: ireturn //解释说明：从当前方法返回int
       LineNumberTable:
         line 39: 0
 
@@ -437,7 +508,7 @@ Constant pool:
       stack=2, locals=2, args_size=2
          0: iload_0
          1: iload_1
-         2: imul
+         2: imul  //解释说明：将栈顶两int型数值相乘并将结果压入栈顶
          3: ireturn
       LineNumberTable:
         line 43: 0
@@ -449,7 +520,7 @@ Constant pool:
       stack=2, locals=2, args_size=2
          0: iload_0
          1: iload_1
-         2: idiv
+         2: idiv //解释说明：将栈顶两int型数值相除并将结果压入栈顶
          3: ireturn
       LineNumberTable:
         line 47: 0
@@ -480,14 +551,23 @@ Constant pool:
         11: iload_1
         12: invokedynamic #88,  0             // InvokeDynamic #0:makeConcatWithConstants:(I)Ljava/lang/String;
         17: invokevirtual #83                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
-        20: iinc          1, 1
-        23: goto          2
+        20: iinc          1, 1   //解释说明：将指定int型变量增加指定值（i++, i–, i+=2）
+        23: goto          2      //解释说明：无条件跳转
         26: return
       LineNumberTable:
         line 55: 0
         line 56: 8
         line 55: 20
         line 58: 26
+
+      //解释说明：栈图（在Java 6版本之后JVM在class文件中引入了栈图(StackMapTable)属性。作用是为了提高JVM在类型检查的验证过程的效率）
+        StackMapTable_attribute {
+            u2              attribute_name_index; 对应的是常量池表的一个有效索引。也即CONSTANT_Utf8_info结构中表示“StackMapTable”的索引
+            u4              attribute_length; 标识当前属性的长度（排除前六个字节）
+            u2              number_of_entries; 表示entries表的成员数量。entries表中的所有成员都是一个stack_map_frame结构
+            stack_map_frame entries[number_of_entries]; 表中的每一项都表示本方法的一个stack map frame，并且表中每一项都是有序的
+        }
+
       StackMapTable: number_of_entries = 2
         frame_type = 252 /* append */
           offset_delta = 2
@@ -501,11 +581,11 @@ Constant pool:
     Code:
       stack=4, locals=6, args_size=1
          0: iconst_3
-         1: newarray       int
+         1: newarray       int //解释说明：创建一个指定原始类型（如int, float, char…）的数组，并将其引用值压入栈顶
          3: dup
          4: iconst_0
          5: iconst_1
-         6: iastore
+         6: iastore  //解释说明：将栈顶int型数值存入指定数组的指定索引位置，这里是把栈顶1存入数组下标为0的位置
          7: dup
          8: iconst_1
          9: iconst_2
@@ -518,7 +598,7 @@ Constant pool:
         16: aload_1
         17: astore_2
         18: aload_2
-        19: arraylength
+        19: arraylength //解释说明：获得数组的长度值并压入栈顶
         20: istore_3
         21: iconst_0
         22: istore        4
@@ -552,7 +632,7 @@ Constant pool:
 
   public synchronized void testSynchronized();
     descriptor: ()V
-    flags: (0x0021) ACC_PUBLIC, ACC_SYNCHRONIZED
+    flags: (0x0021) ACC_PUBLIC, ACC_SYNCHRONIZED //解释说明：方法标志为public、synchronized
     Code:
       stack=3, locals=1, args_size=1
          0: aload_0
@@ -566,10 +646,12 @@ Constant pool:
         line 78: 0
         line 79: 10
 }
-SourceFile: "Hello.java"
+SourceFile: "Hello.java" //解释说明：ClassFile结构的属性表、源代码文件名
 NestMembers:
   Hello$InnerClassTest2
   Hello$InnerClassTest1
+
+//解释说明：位于ClassFile结构的属性表中，用于保存invokedynamic指令引用的引导方法限定符，如果常量池中包含CONSTANT_InvokeDynamic_info成员，则ClassFile的属性表中必须包含且只能包含一个BootstrapMethods属性
 BootstrapMethods:
   0: #139 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
     Method arguments:
@@ -577,7 +659,7 @@ BootstrapMethods:
   1: #139 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
     Method arguments:
       #147 foreach loop i = \u0001
-InnerClasses:
+InnerClasses: //解释说明：位于ClassFile的属性表中，表示该类定义的内部类信息，如果有内部类，则有且仅有一个InnerClasses属性
   #150= #50 of #7;                        // InnerClassTest1=class Hello$InnerClassTest1 of class Hello
   static #151= #70 of #7;                 // InnerClassTest2=class Hello$InnerClassTest2 of class Hello
   public static final #156= #152 of #154; // Lookup=class java/lang/invoke/MethodHandles$Lookup of class java/lang/invoke/MethodHandles
