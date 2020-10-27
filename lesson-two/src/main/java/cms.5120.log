@@ -1,0 +1,17 @@
+Java HotSpot(TM) 64-Bit Server VM (25.231-b11) for windows-amd64 JRE (1.8.0_231-b11), built on Oct  5 2019 03:11:30 by "java_re" with MS VC++ 10.0 (VS2010)
+Memory: 4k page, physical 8272828k(3666968k free), swap 12899592k(3741412k free)
+CommandLine flags: -XX:InitialHeapSize=5368709120 -XX:MaxHeapSize=5368709120 -XX:+PrintGC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+UseCompressedClassPointers -XX:+UseCompressedOops -XX:-UseLargePagesIndividualAllocation -XX:+UseParallelGC 
+0.767: [GC (Allocation Failure) [PSYoungGen: 1311232K->218101K(1529344K)] 1311232K->273681K(5024768K), 0.0718402 secs] [Times: user=0.25 sys=0.25, real=0.07 secs] 
+1.088: [GC (Allocation Failure) [PSYoungGen: 1529333K->218111K(1529344K)] 1584913K->397992K(5024768K), 0.0889942 secs] [Times: user=0.30 sys=0.44, real=0.09 secs] 
+1.417: [GC (Allocation Failure) [PSYoungGen: 1529343K->218099K(1529344K)] 1709224K->501675K(5024768K), 0.0866755 secs] [Times: user=0.53 sys=0.11, real=0.09 secs] 
+1.738: [GC (Allocation Failure) [PSYoungGen: 1529331K->218102K(1529344K)] 1812907K->628570K(5024768K), 0.0918585 secs] [Times: user=0.51 sys=0.17, real=0.09 secs] 
+2.064: [GC (Allocation Failure) [PSYoungGen: 1529334K->218101K(1529344K)] 1939802K->732978K(5024768K), 0.0841992 secs] [Times: user=0.42 sys=0.17, real=0.08 secs] 
+Heap
+ PSYoungGen      total 1529344K, used 270689K [0x0000000755580000, 0x00000007c0000000, 0x00000007c0000000)
+  eden space 1311232K, 4% used [0x0000000755580000,0x00000007588db0a0,0x00000007a5600000)
+  from space 218112K, 99% used [0x00000007a5600000,0x00000007b2afd730,0x00000007b2b00000)
+  to   space 218112K, 0% used [0x00000007b2b00000,0x00000007b2b00000,0x00000007c0000000)
+ ParOldGen       total 3495424K, used 514876K [0x0000000680000000, 0x0000000755580000, 0x0000000755580000)
+  object space 3495424K, 14% used [0x0000000680000000,0x000000069f6cf308,0x0000000755580000)
+ Metaspace       used 2638K, capacity 4486K, committed 4864K, reserved 1056768K
+  class space    used 291K, capacity 386K, committed 512K, reserved 1048576K
